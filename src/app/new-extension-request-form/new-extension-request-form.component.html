@@ -1,0 +1,55 @@
+<h1 class="heading">New Extension Request Form</h1>
+<br>
+<div class="container">
+    <h1>Raise New Extension Request</h1>
+    <br>
+    <br>
+
+    <div class="container1">
+        <form id="myForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="emisId">EMIs Id</label>
+                <input type="number" class="form-control" id="emisid" placeholder="Enter EMIs Id" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customerId">Customer Id</label>
+                <input type="number" class="form-control" id="customerid" placeholder="Enter Customer Id" required>
+            </div>
+
+            <div class="form-group">
+                <label for="loanPlanId">Loan Plan Id</label>
+                <input type="number" class="form-control" id="loanplanid" placeholder="Enter Loan Plan Id" required>
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="reason">Reason</label>
+                <select [(ngModel)]="selectedReason">
+                    <option value="">Select a reason</option>
+                    <option *ngFor="let reason of reasons" [value]="reason.id">{{reason.name}}</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <div *ngIf="selectedReason === 'other'">
+                    <input type="text" [(ngModel)]="otherReason">
+                </div>
+            </div> -->
+            <div class="form-group">
+                <label for="date">Request Raised On</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">ETA Payment Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="submitBtn" (click)="onSubmit()" class="btn btn-success">Submit</button>
+
+            </div>
+        </form>
+    </div>
+
+
+</div>
