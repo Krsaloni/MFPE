@@ -4,22 +4,24 @@
     <h1>Raise New Extension Request</h1>
     <br>
     <br>
-
     <div class="container1">
         <form id="myForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="emisId">EMIs Id</label>
-                <input type="number" class="form-control" id="emisid" placeholder="Enter EMIs Id" required>
+                <input type="number" class="form-control" id="emisId" placeholder="Enter EMIs Id"
+                    [(ngModel)]="request.emisId" name="emisId" required>
             </div>
 
             <div class="form-group">
                 <label for="customerId">Customer Id</label>
-                <input type="number" class="form-control" id="customerid" placeholder="Enter Customer Id" required>
+                <input type="number" class="form-control" id="customerId" placeholder="Enter Customer Id"
+                    name="customerId" [(ngModel)]="request.customerId" required>
             </div>
 
             <div class="form-group">
                 <label for="loanPlanId">Loan Plan Id</label>
-                <input type="number" class="form-control" id="loanplanid" placeholder="Enter Loan Plan Id" required>
+                <input type="number" class="form-control" id="loanPlanId" placeholder="Enter Loan Plan Id"
+                    name="loanPlanId" [(ngModel)]="request.loanPlanId" required>
             </div>
 
             <!-- <div class="form-group">
@@ -35,17 +37,17 @@
                 </div>
             </div> -->
             <div class="form-group">
-                <label for="date">Request Raised On</label>
-                <input type="date" id="date" name="date" required>
+                <label for="reqdate">Request Raised On</label>
+                <input type="date" id="reqDate" name="reqDate" [(ngModel)]="request.requestRaisedOn" required>
             </div>
 
             <div class="form-group">
-                <label for="date">ETA Payment Date</label>
-                <input type="date" id="date" name="date" required>
+                <label for="etadate">ETA Payment Date</label>
+                <input type="date" id="etaDate" name="etaDate" [(ngModel)]="request.requestStatus" required>
             </div>
 
             <div class="form-group">
-                <button type="submit" id="submitBtn" (click)="onSubmit()" class="btn btn-success">Submit</button>
+                <button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
 
             </div>
         </form>

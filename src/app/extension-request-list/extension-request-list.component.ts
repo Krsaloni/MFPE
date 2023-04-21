@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Extensionrequests } from '../extensionrequests';
-import { ExtensionrequestsService } from '../extensionrequests.service';
+import { Request } from '../request';
+import { RequestService } from '../request.service';
 
 @Component({
   selector: 'app-extension-request-list',
   templateUrl: './extension-request-list.component.html',
   styleUrls: ['./extension-request-list.component.css']
 })
-export class ExtensionRequestListComponent {
-  extensionrequests: Extensionrequests[] = [];
+export class ExtensionRequestListComponent implements OnInit {
 
-  constructor(private extensionRequestsService: ExtensionrequestsService,
-    private router: Router) { }
+  requests: Request[] = [];
 
-  // ngOnInit() {
-  //   this.extensionRequestsService.getExtensionrequests()
-  //     .subscribe((requests: Extensionrequests[]) => this.extensionrequests = requests);
-  // }
+  constructor(private requestService: RequestService) { }
+
+  ngOnInit(): void {
+    this.getRequests();
+  }
+
+  private getRequests() {
+    this.requestService.getRequestList().subscribe(data => {
+      this.requests = data;
+    });
+  }
 }
 

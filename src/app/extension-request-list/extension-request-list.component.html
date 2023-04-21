@@ -7,21 +7,22 @@
             <th>Loan Plan Id</th>
             <th>Request Raised On</th>
             <th>ETA Payment Date</th>
+            <th>Response</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <!-- <tr *ngFor="let request of extensionRequests">
+        <tr *ngFor="let request of requests">
             <td>{{ request.emisId }}</td>
             <td>{{ request.customerId }}</td>
             <td>{{ request.loanPlanId }}</td>
             <td>{{ request.requestRaisedOn }}</td>
             <td>{{ request.etaPaymentDate }}</td>
             <td>
-                <button class="btn btn-primary" [routerLink]="['/respond', request.id]">
-                    Respond
+                <button class="btn btn-primary">
+                    View
                 </button>
             </td>
-        </tr> -->
+        </tr>
     </tbody>
 </table>
