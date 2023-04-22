@@ -24,15 +24,21 @@
                     name="loanPlanId" [(ngModel)]="request.loanPlanId" required>
             </div>
 
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <label for="reason">Reason</label>
-                <select [(ngModel)]="selectedReason">
+                <select name="extensionReasons" class="btn btn-success">
+                    <option value="personal">Personal</option>
+                    <option value="home">Home</option>
+                    <option value="vehicle">Vehicle</option>
+                    <option value="medical">Medical</option>
+                </select>
+                <!-- <select [(ngModel)]="selectedReason">
                     <option value="">Select a reason</option>
                     <option *ngFor="let reason of reasons" [value]="reason.id">{{reason.name}}</option>
                     <option value="other">Other</option>
-                </select>
-
-                <div *ngIf="selectedReason === 'other'">
+                </select> -->
+            </div>
+            <!-- <div *ngIf="selectedReason === 'other'">
                     <input type="text" [(ngModel)]="otherReason">
                 </div>
             </div> -->

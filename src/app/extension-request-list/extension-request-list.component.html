@@ -2,9 +2,12 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Request Id</th>
             <th>EMIs Id</th>
             <th>Customer Id</th>
             <th>Loan Plan Id</th>
+            <th>Extension Reason Id</th>
+            <th>Extension Reasons</th>
             <th>Request Raised On</th>
             <th>ETA Payment Date</th>
             <th>Response</th>
@@ -13,11 +16,15 @@
     </thead>
     <tbody>
         <tr *ngFor="let request of requests">
+            <td>{{ request.requestId }}</td>
             <td>{{ request.emisId }}</td>
             <td>{{ request.customerId }}</td>
             <td>{{ request.loanPlanId }}</td>
+            <td>{{ request.id }}</td>
+            <td>{{ request.reason }}</td>
             <td>{{ request.requestRaisedOn }}</td>
             <td>{{ request.etaPaymentDate }}</td>
+            <td>{{ request.requestStatus }}</td>
             <td>
                 <button class="btn btn-primary">
                     View

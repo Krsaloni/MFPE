@@ -17,10 +17,11 @@ export class ExtensionRequestListComponent implements OnInit {
     this.getRequests();
   }
 
-  private getRequests() {
+  getRequests(): void {
     this.requestService.getRequestList().subscribe(data => {
       this.requests = data;
     });
   }
+
 }
 

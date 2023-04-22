@@ -8,13 +8,13 @@ import { Request } from './request';
 })
 export class RequestService {
 
-  private baseURL = "localhost:8082/api/emiextensions";
+  private baseURL = "http://localhost:8082/api";
 
   constructor(private httpClient: HttpClient) { }
   getRequestList(): Observable<Request[]> {
-    return this.httpClient.get<Request[]>(`${this.baseURL}`);
+    return this.httpClient.get<Request[]>(`${this.baseURL}/emiextensions`);
   }
   createRequest(request: Request): Observable<Object> {
-    return this.httpClient.post(`${this.baseURL}`, request);
+    return this.httpClient.post(`${this.baseURL}/emiextensions/newrequest`, request);
   }
 }
