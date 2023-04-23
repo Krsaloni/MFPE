@@ -5,3 +5,8 @@
 .heading {
     text-align: center;
 }
+
+.container1 {
+    margin-bottom: 50px;
+    /* adjust this value as per your requirement */
+}

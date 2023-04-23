@@ -18,11 +18,14 @@ export class ExtensionRequestListComponent implements OnInit {
     this.getRequests();
   }
 
-  private getRequests(){
+  private getRequests() {
     this.requestService.getRequestList().subscribe(data => {
       this.requests = data;
     });
   }
 
+  viewdetails(requestId: number) {
+    this.router.navigate(['respondextension', requestId]);
+  }
 }
 

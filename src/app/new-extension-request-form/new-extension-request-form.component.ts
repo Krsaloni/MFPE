@@ -18,14 +18,17 @@ export class NewExtensionRequestFormComponent implements OnInit {
   ngOnInit(): void {
   }
   saveRequest() {
+    console.log('saveRequest called....');
     this.requestService.createRequest(this.request).subscribe(data => {
-      console.log(data);
+      console.log('this.request...:', this.request);
+      console.log('data:::', data);
       this.goToRequestList();
     },
-      error => console.log(error));
+      error => console.log('Error', error));
   }
-  goToRequestList() {
 
+  goToRequestList() {
+    console.log('goToRequestList called...');
     this.router.navigate(['/requests']);
 
   }

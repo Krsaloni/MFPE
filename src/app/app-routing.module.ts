@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'menu', component: MenuComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'respondextension', component: RespondExtensionComponent }
+  { path: 'respondextension/:requestId', component: RespondExtensionComponent }
 
 ];
 
