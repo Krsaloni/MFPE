@@ -20,8 +20,9 @@ export class NewExtensionRequestFormComponent implements OnInit {
   saveRequest() {
     this.requestService.createRequest(this.request).subscribe(data => {
       console.log(data);
-    });
-    this.goToRequestList();
+      this.goToRequestList();
+    },
+      error => console.log(error));
   }
   goToRequestList() {
 
@@ -30,6 +31,7 @@ export class NewExtensionRequestFormComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.request);
+    alert('Form submitted successfully!');
     this.saveRequest();
   }
 

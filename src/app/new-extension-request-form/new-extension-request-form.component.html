@@ -9,19 +9,19 @@
             <div class="form-group">
                 <label for="emisId">EMIs Id</label>
                 <input type="number" class="form-control" id="emisId" placeholder="Enter EMIs Id"
-                    [(ngModel)]="request.emisId" name="emisId" required>
+                    [(ngModel)]="request.emisId" [ngModelOptions]="{standalone: true}" name="emisId" required>
             </div>
 
             <div class="form-group">
                 <label for="customerId">Customer Id</label>
                 <input type="number" class="form-control" id="customerId" placeholder="Enter Customer Id"
-                    name="customerId" [(ngModel)]="request.customerId" required>
+                    name="customerId" [(ngModel)]="request.customerId" [ngModelOptions]="{standalone: true}" required>
             </div>
 
             <div class="form-group">
                 <label for="loanPlanId">Loan Plan Id</label>
                 <input type="number" class="form-control" id="loanPlanId" placeholder="Enter Loan Plan Id"
-                    name="loanPlanId" [(ngModel)]="request.loanPlanId" required>
+                    name="loanPlanId" [(ngModel)]="request.loanPlanId" [ngModelOptions]="{standalone: true}" required>
             </div>
 
             <div class="form-group">
@@ -44,14 +44,21 @@
             </div> -->
             <div class="form-group">
                 <label for="reqdate">Request Raised On</label>
-                <input type="date" id="reqDate" name="reqDate" [(ngModel)]="request.requestRaisedOn" required>
+                <input type="date" id="reqDate" name="reqDate" [(ngModel)]="request.requestRaisedOn"
+                    [ngModelOptions]="{standalone: true}" required>
             </div>
 
             <div class="form-group">
                 <label for="etadate">ETA Payment Date</label>
-                <input type="date" id="etaDate" name="etaDate" [(ngModel)]="request.requestStatus" required>
+                <input type="date" id="etaDate" name="etaDate" [(ngModel)]="request.requestStatus"
+                    [ngModelOptions]="{standalone: true}" [ngModelOptions]="{standalone: true}" required>
             </div>
-
+            <div class="form-group">
+                <label for="requestStatus">Request Status</label>
+                <select name="requestStatus">
+                    <option value="New">New</option>
+                </select>
+            </div>
             <div class="form-group">
                 <button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
 

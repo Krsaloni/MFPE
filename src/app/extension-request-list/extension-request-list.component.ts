@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Request } from '../request';
 import { RequestService } from '../request.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-extension-request-list',
@@ -11,13 +12,13 @@ export class ExtensionRequestListComponent implements OnInit {
 
   requests: Request[] = [];
 
-  constructor(private requestService: RequestService) { }
+  constructor(private requestService: RequestService, private router: Router) { }
 
   ngOnInit(): void {
     this.getRequests();
   }
 
-  getRequests(): void {
+  private getRequests(){
     this.requestService.getRequestList().subscribe(data => {
       this.requests = data;
     });

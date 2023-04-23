@@ -9,6 +9,8 @@ import { ExtensionRequestListComponent } from './extension-request-list/extensio
 import { NewExtensionRequestFormComponent } from './new-extension-request-form/new-extension-request-form.component';
 import { RespondExtensionComponent } from './respond-extension/respond-extension.component';
 import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './login/login.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { MenuComponent } from './menu/menu.component';
     NewExtensionRequestFormComponent,
     ExtensionRequestListComponent,
     RespondExtensionComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent,
+    AdminloginComponent
 
   ],
   imports: [
