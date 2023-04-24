@@ -1,4 +1,6 @@
-<h2>Extension Requests</h2>
+<div class="title">
+    <h2>Extension Requests</h2>
+</div>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -6,8 +8,8 @@
             <th>EMIs Id</th>
             <th>Customer Id</th>
             <th>Loan Plan Id</th>
-            <!-- <th>Extension Reason Id</th> -->
             <th>Extension Reasons</th>
+            <th>Other Reason</th>
             <th>Request Raised On</th>
             <th>ETA Payment Date</th>
             <th>Response</th>
@@ -20,8 +22,8 @@
             <td>{{ request.emisId }}</td>
             <td>{{ request.customerId }}</td>
             <td>{{ request.loanPlanId }}</td>
-            <!-- <td>{{ request.id }}</td> -->
             <td>{{ request.reason }}</td>
+            <td>{{ request.otherReason }}</td>
             <td>{{ request.requestRaisedOn }}</td>
             <td>{{ request.etaPaymentDate }}</td>
             <td>{{ request.requestStatus }}</td>

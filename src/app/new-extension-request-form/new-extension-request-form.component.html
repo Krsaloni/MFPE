@@ -1,9 +1,9 @@
-<h1 class="heading">New Extension Request Form</h1>
+<div class="title">
+    <h1 class="heading">New Extension Request Form</h1>
+</div>
 <br>
 <div class="container">
-    <h1>Raise New Extension Request</h1>
-    <br>
-    <br>
+    <h3>Raise New Extension Request</h3>
     <div class="container1">
         <form id="myForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
@@ -31,32 +31,36 @@
 
             <div class="form-group">
                 <label for="reason">Reason</label>
-                <select name="extensionReasons" class="btn btn-success" [(ngModel)]="request.reason"
-                    [ngModelOptions]="{standalone: true}">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="extensionReasons" [(ngModel)]="request.reason" [ngModelOptions]="{standalone: true}">
+                    <option value="" selected disabled>-Select Reason-</option>
                     <option value="abc">ABC</option>
                     <option value="mno">MNO</option>
                     <option value="pqr">PQR</option>
                     <option value="xyz">XYZ</option>
+                    <option value="other">other</option>
                 </select>
-            </div>
-            <!-- <div *ngIf="selectedReason === 'other'">
-                    <input type="text" [(ngModel)]="otherReason">
+                <div *ngIf="request.reason === 'other'">
+                    <label for="otherreason">Other Reason</label>
+                    <input type="text" name="otherreason" [(ngModel)]="request.otherReason">
                 </div>
-            </div> -->
+            </div>
+
             <div class="form-group">
-                <label for="reqdate">Request Raised On</label>
+                <label for="reqdate">Request Raised On</label>&nbsp;
                 <input type="date" id="reqDate" name="reqDate" [(ngModel)]="request.requestRaisedOn"
                     [ngModelOptions]="{standalone: true}" required>
             </div>
 
             <div class="form-group">
-                <label for="etadate">ETA Payment Date</label>
-                <input type="date" id="etaDate" name="etaDate" [(ngModel)]="request.requestStatus"
-                    [ngModelOptions]="{standalone: true}" [ngModelOptions]="{standalone: true}" required>
+                <label for="etadate">ETA Payment Date</label>&nbsp;
+                <input type="date" id="etaDate" name="etaDate" [(ngModel)]="request.etaPaymentDate"
+                    [ngModelOptions]="{standalone: true}" required>
             </div>
             <div class="form-group">
                 <label for="requestStatus">Request Status</label>
-                <select name="requestStatus">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="requestStatus" [(ngModel)]="request.requestStatus">
                     <option value="New">New</option>
                 </select>
             </div>

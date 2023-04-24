@@ -4,6 +4,7 @@ export class Request {
     customerId: number;
     loanPlanId: number;
     reason: String;
+    otherReason: String;
     requestRaisedOn: Date;
     etaPaymentDate: Date;
     requestStatus: String;

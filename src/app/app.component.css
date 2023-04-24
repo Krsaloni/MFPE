@@ -1,19 +1,15 @@
 h1 {
     text-align: center;
-    /* position: fixed; */
+    padding-bottom: 0;
+    padding-top: 10px;
 }
 
-/* .fixed{
-    position: fixed;
-    width: 100%;
-    transition: 0.2s linear;
-    top: 0px;
+.logo {
+    background-image: linear-gradient(to right, #727373, #8a8b8c, #a3a5a5, #bdbebf, #d7d9da, #dbdddf, #e0e2e3, #e4e6e8, #d2d5d7, #c1c3c7, #b0b3b6, #a0a2a6);
+    height: 80px;
 }
-.nofixed{
-    position: static;
-    transition: 0.2s linear;
-    top: -50px;
-} */
+
+
 .footer {
     position: fixed;
     bottom: 0;
