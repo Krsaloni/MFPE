@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../request.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Request } from '../request';
 
 @Component({
@@ -11,16 +12,9 @@ import { Request } from '../request';
 export class RespondExtensionComponent implements OnInit {
 
   requestId: number;
-  // emisId: number;
-  // customerId: number;
-  // loanPlanId: number;
-  // reason: String;
-  // requestRaisedOn: Date;
-  // etaPaymentDate: Date;
-  // requestStatus: String;
-
   request: Request = new Request();
-  constructor(private route: ActivatedRoute, private requestService: RequestService) { }
+
+  constructor(private route: ActivatedRoute, private requestService: RequestService, private router: Router) { }
 
   ngOnInit(): void {
     this.requestId = this.route.snapshot.params['requestId'];
@@ -30,5 +24,24 @@ export class RespondExtensionComponent implements OnInit {
     });
   }
 
+  approveRequest(): void {
+    this.request.requestStatus = 'Approved';
+    alert('Response Updated successfully!');
+    this.saveResponse();
+  }
+  rejectRequest(): void {
+    this.request.requestStatus = 'Rejected';
+    alert('Response Updated  successfully!');
+    this.saveResponse();
+  }
+  saveResponse() {
+    this.requestService.updateRequestById(this.requestId, this.request).subscribe(data => {
+      this.goToRespond();
+    },
+      error => console.log(error));
+  }
 
+  goToRespond() {
+    this.router.navigate(['/requests']);
+  }
 }

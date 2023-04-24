@@ -22,4 +22,7 @@ export class RequestService {
   getRequestById(requestId: number): Observable<Request> {
     return this.httpClient.get<Request>(`${this.baseURL}/emiextensions/${requestId}`)
   }
+  updateRequestById(requestId: number, request: Request): Observable<Request> {
+    return this.httpClient.put<Request>(`${this.baseURL}/emiextensions/${requestId}`, request);
+  }
 }

@@ -28,7 +28,7 @@
         <label><b> Request Status: </b></label> {{request.requestStatus}}
     </div>
     <div class="button-group">
-        <button class="btn btn-success">Accept</button>
-        <button class="btn btn-danger">Reject</button>
+        <button class="btn btn-success" (click)="approveRequest()">Approve</button>
+        <button class="btn btn-danger" (click)="rejectRequest()">Reject</button>
     </div>
 </div>
